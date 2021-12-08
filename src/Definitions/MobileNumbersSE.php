@@ -69,9 +69,10 @@ class MobileNumbersSE extends MobileNumbers implements MobileNumbersContract
      * Add the country code prefix to the mobile phone number.
      *
      * @param $number
+     * @param string $prefix
      * @return string
      */
-    public function addCountryCode($number): string
+    public function addCountryCode($number, $prefix): string
     {
         if ($this->hasValidCountryCode($number))
             return $number;
@@ -82,7 +83,7 @@ class MobileNumbersSE extends MobileNumbers implements MobileNumbersContract
         // The '0' is used on all domestic calls, including in the same city, but is omitted when dialling
         // from other countries.
 
-        return '+' . $this->country_code . substr($number, 1);
+        return $prefix . $this->country_code . substr($number, 1);
     }
 
 }

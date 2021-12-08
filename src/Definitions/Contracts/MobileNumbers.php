@@ -37,9 +37,10 @@ interface MobileNumbers
      * Add the country code to a number.
      *
      * @param $number
+     * @param string $prefix
      * @return string
      */
-    public function addCountryCode($number) : string;
+    public function addCountryCode($number, $prefix) : string;
 
 
     /**

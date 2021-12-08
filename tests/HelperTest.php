@@ -48,7 +48,7 @@ class HelperTest extends TestCase
     {
         $definitions = Helper::getAllDefinitions();
 
-        $this->assertNotEmpty($definitions);
+        $this->assertGreaterThan(0, count($definitions));
 
         foreach ($definitions as $definition)
         {
@@ -56,7 +56,7 @@ class HelperTest extends TestCase
             $this->assertArrayHasKey('country_code', $definition);
             $this->assertArrayHasKey('country_flag', $definition);
             $this->assertArrayHasKey('valid_prefix_codes', $definition);
-            $this->assertNotEmpty('valid_prefix_codes', $definition);
+            $this->assertGreaterThan(0, $definition['valid_prefix_codes']);
 
             foreach ($definition['valid_prefix_codes'] as $valid_prefix)
             {

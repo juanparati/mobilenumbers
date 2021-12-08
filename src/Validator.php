@@ -101,11 +101,12 @@ class Validator
      * Add the country code prefix to the mobile phone number.
      *
      * @param $number
+     * @param string $prefix
      * @return string
      */
-    public function addCountryCode($number) : string
+    public function addCountryCode($number, $prefix = '+') : string
     {
-        return $this->definition->addCountryCode($number);
+        return $this->definition->addCountryCode($number, $prefix);
     }
 
 

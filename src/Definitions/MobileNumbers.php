@@ -95,14 +95,15 @@ abstract class MobileNumbers implements MobileNumbersContract
      * Add the country code prefix to the mobile phone number.
      *
      * @param $number
+     * @param string $prefix (Default '+')
      * @return string
      */
-    public function addCountryCode($number): string
+    public function addCountryCode($number, $prefix) : string
     {
         if ($this->hasValidCountryCode($number))
             return $number;
 
-        return '+' . $this->country_code . $number;
+        return $prefix . $this->country_code . $number;
     }
 
 

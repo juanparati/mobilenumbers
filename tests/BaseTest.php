@@ -78,7 +78,7 @@ abstract class BaseTest extends TestCase
         foreach ($this->test_prefix_numbers as $prefix_number)
         {
             $this->assertEquals($prefix_number['with']
-                , $validator->addCountryCode($prefix_number['without'])
+                , $validator->addCountryCode($prefix_number['without'], $prefix_number['with'][0] === '+' ? '+' : '00')
                 , "Country code was not correctly added: {$prefix_number['with']} - {$prefix_number['without']}"
             );
 

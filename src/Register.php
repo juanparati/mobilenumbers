@@ -22,9 +22,11 @@ class Register
      */
     protected static $defaults =
     [
+        'DE' => \Juanparati\MobileNumbers\Definitions\MobileNumbersDE::class,
         'DK' => \Juanparati\MobileNumbers\Definitions\MobileNumbersDK::class,
         'ES' => \Juanparati\MobileNumbers\Definitions\MobileNumbersES::class,
         'FI' => \Juanparati\MobileNumbers\Definitions\MobileNumbersFI::class,
+        'FR' => \Juanparati\MobileNumbers\Definitions\MobileNumbersFR::class,
         'NO' => \Juanparati\MobileNumbers\Definitions\MobileNumbersNO::class,
         'PL' => \Juanparati\MobileNumbers\Definitions\MobileNumbersPL::class,
         'SE' => \Juanparati\MobileNumbers\Definitions\MobileNumbersSE::class,
