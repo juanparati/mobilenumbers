@@ -4,9 +4,7 @@
 namespace Juanparati\MobileNumbers\Definitions;
 
 
-use Juanparati\MobileNumbers\Definitions\Contracts\MobileNumbers as MobileNumbersContract;
-
-class MobileNumbersDE extends MobileNumbers implements MobileNumbersContract
+class MobileNumbersDE extends MobileNumbersSE
 {
 
     /**
@@ -46,5 +44,4 @@ class MobileNumbersDE extends MobileNumbers implements MobileNumbersContract
         '016' => ['min' => 8, 'max' => 8],
         '017' => ['min' => 8, 'max' => 8],
     ];
-
 }
