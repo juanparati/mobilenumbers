@@ -30,6 +30,7 @@ class Register
         'NO' => \Juanparati\MobileNumbers\Definitions\MobileNumbersNO::class,
         'PL' => \Juanparati\MobileNumbers\Definitions\MobileNumbersPL::class,
         'SE' => \Juanparati\MobileNumbers\Definitions\MobileNumbersSE::class,
+        'ZA' => \Juanparati\MobileNumbers\Definitions\MobileNumbersZA::class,
     ];
 
 

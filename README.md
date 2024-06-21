@@ -21,6 +21,7 @@ Right now only phone numbers from the following countries are validated:
 | Norway  | NO   |
 | Poland  | PL   |
 | Sweden  | SE   |
+| South Africa | ZA |
 
 
 Feel free to to fork this project and add new countries.
