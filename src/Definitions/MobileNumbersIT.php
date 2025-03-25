@@ -1,20 +1,17 @@
 <?php
 namespace Juanparati\MobileNumbers\Definitions;
 
-use Juanparati\MobileNumbers\Definitions\Concerns\HasTrunkCode;
 use Juanparati\MobileNumbers\Definitions\Contracts\MobileNumbers as MobileNumbersContract;
 
-class MobileNumbersDE extends MobileNumbers implements MobileNumbersContract
+class MobileNumbersIT extends MobileNumbers implements MobileNumbersContract
 {
-    use HasTrunkCode;
-
     /**
      * Country code according to ISO 3166-1 alpha-2.
      *
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      * @var string
      */
-    protected $country_alpha_code = 'DE';
+    protected $country_alpha_code = 'IT';
 
 
     /**
@@ -22,7 +19,7 @@ class MobileNumbersDE extends MobileNumbers implements MobileNumbersContract
      *
      * @var string
      */
-    protected $country_code = '49';
+    protected $country_code = '39';
 
 
     /**
@@ -31,7 +28,7 @@ class MobileNumbersDE extends MobileNumbers implements MobileNumbersContract
      * @see https://unicode.org/emoji/charts/full-emoji-list.html#country-flag
      * @var string
      */
-    protected $country_flag = "🇩🇪";
+    protected $country_flag = "🇮🇹";
 
 
     /**
@@ -41,8 +38,7 @@ class MobileNumbersDE extends MobileNumbers implements MobileNumbersContract
      * @var array
      */
     protected $valid_prefix_codes = [
-        '015' => ['min' => 8, 'max' => 9],
-        '016' => ['min' => 8, 'max' => 9],
-        '017' => ['min' => 8, 'max' => 9],
+        '3'      => ['min' => 9, 'max' => 10],
     ];
+
 }

@@ -1,10 +1,7 @@
 <?php
-
-
 namespace Juanparati\MobileNumbers\Definitions;
 
 use Juanparati\MobileNumbers\Definitions\Contracts\MobileNumbers as MobileNumbersContract;
-
 
 class MobileNumbersES extends MobileNumbers implements MobileNumbersContract
 {

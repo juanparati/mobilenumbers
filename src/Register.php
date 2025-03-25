@@ -27,6 +27,7 @@ class Register
         'ES' => \Juanparati\MobileNumbers\Definitions\MobileNumbersES::class,
         'FI' => \Juanparati\MobileNumbers\Definitions\MobileNumbersFI::class,
         'FR' => \Juanparati\MobileNumbers\Definitions\MobileNumbersFR::class,
+        'IT' => \Juanparati\MobileNumbers\Definitions\MobileNumbersIT::class,
         'NO' => \Juanparati\MobileNumbers\Definitions\MobileNumbersNO::class,
         'PL' => \Juanparati\MobileNumbers\Definitions\MobileNumbersPL::class,
         'SE' => \Juanparati\MobileNumbers\Definitions\MobileNumbersSE::class,

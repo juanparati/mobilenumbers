@@ -1,11 +1,13 @@
 <?php
 
-
 namespace Juanparati\MobileNumbers\Definitions;
+use Juanparati\MobileNumbers\Definitions\Concerns\HasTrunkCode;
+use Juanparati\MobileNumbers\Definitions\Contracts\MobileNumbers as MobileNumbersContract;
 
 
-class MobileNumbersZA extends MobileNumbersSE
+class MobileNumbersZA extends MobileNumbers implements MobileNumbersContract
 {
+    use HasTrunkCode;
 
     /**
      * Country code according to ISO 3166-1 alpha-2.
