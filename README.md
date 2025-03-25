@@ -11,20 +11,25 @@ A library that validate and parse mobile phone numbers.
 
 Right now only phone numbers from the following countries are validated:
 
-| Country | Code |
-|:--------|------|
-| German  | DE   |
-| Denmark | DK   |
-| Spain   | ES   |
-| Finland | FI   |
-| France  | FR   |
-| Norway  | NO   |
-| Poland  | PL   |
-| Sweden  | SE   |
-| South Africa | ZA |
+| Country      | Code |
+|:-------------|------|
+| Germany      | DE   |
+| Denmark      | DK   |
+| Spain        | ES   |
+| Finland      | FI   |
+| France       | FR   |
+| Italy        | IT   |
+| Norway       | NO   |
+| Poland       | PL   |
+| Sweden       | SE   |
+| South Africa | ZA   |
 
 
-Feel free to to fork this project and add new countries.
+Feel free to fork this project and add new countries.
+
+## Installation
+
+    composer require juanparati/mobile-numbers
 
 
 ## How it works
