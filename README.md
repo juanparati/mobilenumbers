@@ -1,4 +1,4 @@
-![Test](https://github.com/juanparati/mobilenumbers/actions/workflows/on_push.yml/badge.svg)
+![Test](https://github.com/juanparati/mobilenumbers/actions/workflows/test.yml/badge.svg)
 
 MobileNumbers
 =============
