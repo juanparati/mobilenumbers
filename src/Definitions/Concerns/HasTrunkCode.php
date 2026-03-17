@@ -16,9 +16,9 @@ trait HasTrunkCode
      */
     public function stripCountryCode($number): string
     {
-        $number_stripped = parent::stripCountryCode($number);
+        $numberStripped = parent::stripCountryCode($number);
 
-        return $number === $number_stripped ? $number : '0' . $number_stripped;
+        return $number === $numberStripped ? $number : '0' . $numberStripped;
     }
 
 
@@ -40,7 +40,7 @@ trait HasTrunkCode
         // The '0' is used on all domestic calls, including in the same city, but is omitted when dialling
         // from other countries.
 
-        return $prefix . $this->country_code . substr($number, 1);
+        return $prefix . $this->countryCode . substr($number, 1);
     }
 
 }

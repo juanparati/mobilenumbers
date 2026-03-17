@@ -14,7 +14,7 @@ class MobileNumbersDE extends MobileNumbers implements MobileNumbersContract
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      * @var string
      */
-    protected $country_alpha_code = 'DE';
+    protected $countryAlphaCode = 'DE';
 
 
     /**
@@ -22,7 +22,7 @@ class MobileNumbersDE extends MobileNumbers implements MobileNumbersContract
      *
      * @var string
      */
-    protected $country_code = '49';
+    protected $countryCode = '49';
 
 
     /**
@@ -31,7 +31,7 @@ class MobileNumbersDE extends MobileNumbers implements MobileNumbersContract
      * @see https://unicode.org/emoji/charts/full-emoji-list.html#country-flag
      * @var string
      */
-    protected $country_flag = "🇩🇪";
+    protected $countryFlag = "🇩🇪";
 
 
     /**
@@ -40,7 +40,7 @@ class MobileNumbersDE extends MobileNumbers implements MobileNumbersContract
      *
      * @var array
      */
-    protected $valid_prefix_codes = [
+    protected $validPrefixCodes = [
         '015' => ['min' => 8, 'max' => 9],
         '016' => ['min' => 8, 'max' => 9],
         '017' => ['min' => 8, 'max' => 9],

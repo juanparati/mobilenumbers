@@ -12,7 +12,7 @@ class MobileNumbersDK extends MobileNumbers implements MobileNumbersContract
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      * @var string
      */
-    protected $country_alpha_code = 'DK';
+    protected $countryAlphaCode = 'DK';
 
 
     /**
@@ -20,7 +20,7 @@ class MobileNumbersDK extends MobileNumbers implements MobileNumbersContract
      *
      * @var string
      */
-    protected $country_code = '45';
+    protected $countryCode = '45';
 
 
     /**
@@ -29,7 +29,7 @@ class MobileNumbersDK extends MobileNumbers implements MobileNumbersContract
      * @see https://unicode.org/emoji/charts/full-emoji-list.html#country-flag
      * @var string
      */
-    protected $country_flag = "🇩🇰";
+    protected $countryFlag = "🇩🇰";
 
 
     /**
@@ -38,13 +38,14 @@ class MobileNumbersDK extends MobileNumbers implements MobileNumbersContract
      *
      * @var array
      */
-    protected $valid_prefix_codes = [
+    protected $validPrefixCodes = [
         '2'      => ['min' => 7, 'max' => 7],
         '30'     => ['min' => 6, 'max' => 6],
         '31'     => ['min' => 6, 'max' => 6],
         '40'     => ['min' => 6, 'max' => 6],
         '41'     => ['min' => 6, 'max' => 6],
         '42'     => ['min' => 6, 'max' => 6],
+        '4911'   => ['min' => 4, 'max' => 4],
         '50'     => ['min' => 6, 'max' => 6],
         '51'     => ['min' => 6, 'max' => 6],
         '52'     => ['min' => 6, 'max' => 6],

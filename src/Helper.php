@@ -25,7 +25,7 @@ class Helper
             return true;
 
         // Check that phone number starts with "00"
-        if (strpos($number, '00') && strlen($number) > 5)
+        if (strpos($number, '00') === 0 && strlen($number) > 5)
             return true;
 
         return false;
@@ -65,12 +65,12 @@ class Helper
     {
         $codes = array_keys(Register::getAll());
 
-        foreach ($codes as $country_code)
+        foreach ($codes as $countryCode)
         {
-            $validator = Validator::country($country_code);
+            $validator = Validator::country($countryCode);
 
             if ($validator->hasValidCountryCode($number) && $validator->isValid($number))
-                return $country_code;
+                return $countryCode;
         }
 
         return null;
