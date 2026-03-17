@@ -25,5 +25,10 @@
         "psr-4": {
             "Juanparati\\MobileNumbers\\Tests\\": "tests"
         }
+    },
+    "scripts": {
+        "test": [
+            "@php vendor/bin/phpunit"
+        ]
     }
 }

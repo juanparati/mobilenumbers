@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/juanparati/mobilenumbers.svg?branch=master)](https://travis-ci.org/juanparati/mobilenumbers)
-
+![Test](https://github.com/juanparati/mobilenumbers/actions/workflows/on_push.yml/badge.svg)
 
 MobileNumbers
 =============
