@@ -32,32 +32,32 @@ class Validator
     /**
      * Validator constructor.
      *
-     * @param $country_code
+     * @param $countryCode
      * @throws ValidatorException
      */
-    public function __construct($country_code)
+    public function __construct($countryCode)
     {
-        $definition_class = Register::get($country_code);
+        $definitionClass = Register::get($countryCode);
 
-        if (!$definition_class)
-            throw new ValidatorException("Class definition for $country_code not found", 0);
+        if (!$definitionClass)
+            throw new ValidatorException("Class definition for $countryCode not found", 0);
 
-        $this->definition = new $definition_class();
+        $this->definition = new $definitionClass();
 
-        $this->helper = Helper::class;
+        $this->helper = new Helper();
     }
 
 
     /**
      * Factory method.
      *
-     * @param $country_code
+     * @param $countryCode
      * @return static
      * @throws ValidatorException
      */
-    public static function country($country_code) : Validator
+    public static function country($countryCode) : Validator
     {
-        return new static($country_code);
+        return new static($countryCode);
     }
 
 

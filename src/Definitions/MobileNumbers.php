@@ -12,7 +12,7 @@ abstract class MobileNumbers implements MobileNumbersContract
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      * @var string
      */
-    protected $country_alpha_code;
+    protected $countryAlphaCode;
 
 
     /**
@@ -21,7 +21,7 @@ abstract class MobileNumbers implements MobileNumbersContract
      * @see https://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-E.164C-2011-PDF-E.pdf
      * @var string
      */
-    protected $country_code;
+    protected $countryCode;
 
 
     /**
@@ -30,7 +30,7 @@ abstract class MobileNumbers implements MobileNumbersContract
      * @see https://unicode.org/emoji/charts/full-emoji-list.html#country-flag
      * @var string
      */
-    protected $country_flag;
+    protected $countryFlag;
 
 
     /**
@@ -38,7 +38,7 @@ abstract class MobileNumbers implements MobileNumbersContract
      *
      * @var array
      */
-    protected $valid_prefix_codes = [];
+    protected $validPrefixCodes = [];
 
 
     /**
@@ -61,12 +61,12 @@ abstract class MobileNumbers implements MobileNumbersContract
      */
     public function stripCountryCode($number) : string
     {
-        $prefix = '+' . $this->country_code;
+        $prefix = '+' . $this->countryCode;
 
         if (strpos($number, $prefix) === 0)
             return substr($number, strlen($prefix));
 
-        $prefix = '00' . $this->country_code;
+        $prefix = '00' . $this->countryCode;
 
         if (strpos($number, $prefix) === 0)
             return substr($number, strlen($prefix));
@@ -99,7 +99,7 @@ abstract class MobileNumbers implements MobileNumbersContract
         if ($this->hasValidCountryCode($number))
             return $number;
 
-        return $prefix . $this->country_code . $number;
+        return $prefix . $this->countryCode . $number;
     }
 
 
@@ -111,10 +111,10 @@ abstract class MobileNumbers implements MobileNumbersContract
     public function getDefinition(): array
     {
         return [
-            'country_alpha_code' => $this->country_alpha_code,
-            'country_code'       => '+' . $this->country_code,
-            'country_flag'       => $this->country_flag,
-            'valid_prefix_codes' => $this->valid_prefix_codes
+            'country_alpha_code' => $this->countryAlphaCode,
+            'country_code'       => '+' . $this->countryCode,
+            'country_flag'       => $this->countryFlag,
+            'valid_prefix_codes' => $this->validPrefixCodes
         ];
     }
 
@@ -130,13 +130,13 @@ abstract class MobileNumbers implements MobileNumbersContract
         // Remove international prefix code.
         $number = $this->stripCountryCode($number);
 
-        foreach ($this->valid_prefix_codes as $prefix_code => $lengths)
+        foreach ($this->validPrefixCodes as $prefixCode => $lengths)
         {
-            if (strpos($number, (string) $prefix_code) === 0)
+            if (strpos($number, (string) $prefixCode) === 0)
             {
-                $number_length = strlen($number) - strlen($prefix_code);
+                $numberLength = strlen($number) - strlen($prefixCode);
 
-                if ($number_length >= $lengths['min'] && $number_length <= $lengths['max'])
+                if ($numberLength >= $lengths['min'] && $numberLength <= $lengths['max'])
                     return true;
             }
         }

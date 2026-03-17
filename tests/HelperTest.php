@@ -61,7 +61,7 @@ class HelperTest extends TestCase
             foreach ($definition['valid_prefix_codes'] as $valid_prefix)
             {
                 $this->assertArrayHasKey('min', $valid_prefix);
-                $this->assertArrayHasKey('min', $valid_prefix);
+                $this->assertArrayHasKey('max', $valid_prefix);
             }
         }
     }

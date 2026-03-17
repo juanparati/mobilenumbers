@@ -38,47 +38,47 @@ class Register
     /**
      * Register a new MobileNumber class.
      *
-     * @param string $country_code
-     * @param MobileNumbersContract $definition
+     * @param string $countryCode
+     * @param string $definition Class name implementing MobileNumbersContract
      */
-    public static function register(string $country_code, MobileNumbersContract $definition) : void
+    public static function register(string $countryCode, string $definition) : void
     {
-        static::$defaults[strtoupper($country_code)] = $definition;
+        static::$defaults[strtoupper($countryCode)] = $definition;
     }
 
 
     /**
      * Unregister a MobileNumber class.
      *
-     * @param string $country_code
+     * @param string $countryCode
      */
-    public static function unregister(string $country_code) : void
+    public static function unregister(string $countryCode) : void
     {
-        unset(static::$defaults[strtoupper($country_code)]);
+        unset(static::$defaults[strtoupper($countryCode)]);
     }
 
 
     /**
      * Check if MobileNumber class was registered.
      *
-     * @param string $country_code
+     * @param string $countryCode
      * @return bool
      */
-    public static function isDefined(string $country_code) : bool
+    public static function isDefined(string $countryCode) : bool
     {
-        return isset(static::$defaults[strtoupper($country_code)]);
+        return isset(static::$defaults[strtoupper($countryCode)]);
     }
 
 
     /**
      * Obtain the MobileNumber class.
      *
-     * @param string $country_code
+     * @param string $countryCode
      * @return string|null
      */
-    public static function get(string $country_code) : ?string
+    public static function get(string $countryCode) : ?string
     {
-        return static::isDefined($country_code) ? static::$defaults[strtoupper($country_code)] : null;
+        return static::isDefined($countryCode) ? static::$defaults[strtoupper($countryCode)] : null;
     }
 
 
