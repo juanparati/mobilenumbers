@@ -10,18 +10,19 @@ A library that validate and parse mobile phone numbers.
 
 Right now only phone numbers from the following countries are validated:
 
-| Country      | Code |
-|:-------------|------|
-| Germany      | DE   |
-| Denmark      | DK   |
-| Spain        | ES   |
-| Finland      | FI   |
-| France       | FR   |
-| Italy        | IT   |
-| Norway       | NO   |
-| Poland       | PL   |
-| Sweden       | SE   |
-| South Africa | ZA   |
+| Country        | Code |
+|:---------------|------|
+| Germany        | DE   |
+| Denmark        | DK   |
+| Spain          | ES   |
+| Finland        | FI   |
+| France         | FR   |
+| United Kingdom | GB   |
+| Italy          | IT   |
+| Norway         | NO   |
+| Poland         | PL   |
+| Sweden         | SE   |
+| South Africa   | ZA   |
 
 
 Feel free to fork this project and add new countries.
