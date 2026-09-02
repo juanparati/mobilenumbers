@@ -41,8 +41,16 @@ class MobileNumbersDE extends MobileNumbers implements MobileNumbersContract
      * @var array
      */
     protected array $validPrefixCodes = [
-        '015' => ['min' => 8, 'max' => 9],
-        '016' => ['min' => 8, 'max' => 9],
-        '017' => ['min' => 8, 'max' => 9],
+        '0151'  => ['min' => 8, 'max' => 8],
+        '0152'  => ['min' => 8, 'max' => 8],
+        '0155'  => ['min' => 8, 'max' => 8],
+        '0156'  => ['min' => 8, 'max' => 8],
+        '0157'  => ['min' => 8, 'max' => 8],
+        '0159'  => ['min' => 8, 'max' => 8],
+        '0160'  => ['min' => 7, 'max' => 8],
+        '0162'  => ['min' => 7, 'max' => 7],
+        '0163'  => ['min' => 7, 'max' => 7],
+        '017'   => ['min' => 8, 'max' => 8],
+        '0176'  => ['min' => 8, 'max' => 8],  // 0176 uses 8-digit subscriber numbers
     ];
 }

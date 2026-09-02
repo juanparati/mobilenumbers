@@ -41,7 +41,8 @@ class MobileNumbersFI extends MobileNumbers implements MobileNumbersContract
      * @var array
      */
     protected array $validPrefixCodes = [
-        '04'     => ['min' => 8, 'max' => 8],
+        '04'     => ['min' => 7, 'max' => 8],
+        '0457'   => ['min' => 7, 'max' => 7],
         '050'    => ['min' => 7, 'max' => 7],
     ];
 
