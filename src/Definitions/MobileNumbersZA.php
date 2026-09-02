@@ -15,7 +15,7 @@ class MobileNumbersZA extends MobileNumbers implements MobileNumbersContract
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      * @var string
      */
-    protected $countryAlphaCode = 'ZA';
+    protected string $countryAlphaCode = 'ZA';
 
 
     /**
@@ -23,7 +23,7 @@ class MobileNumbersZA extends MobileNumbers implements MobileNumbersContract
      *
      * @var string
      */
-    protected $countryCode = '27';
+    protected string $countryCode = '27';
 
 
     /**
@@ -32,7 +32,7 @@ class MobileNumbersZA extends MobileNumbers implements MobileNumbersContract
      * @see https://unicode.org/emoji/charts/full-emoji-list.html#country-flag
      * @var string
      */
-    protected $countryFlag = "🇿🇦";
+    protected string $countryFlag = "🇿🇦";
 
 
     /**
@@ -42,7 +42,7 @@ class MobileNumbersZA extends MobileNumbers implements MobileNumbersContract
      * @see https://en.wikipedia.org/wiki/Telephone_numbers_in_South_Africa
      * @var array
      */
-    protected $validPrefixCodes = [
+    protected array $validPrefixCodes = [
         '06'  => ['min' => 8, 'max' => 8],
         '07'  => ['min' => 8, 'max' => 8],
         '081' => ['min' => 7, 'max' => 7],

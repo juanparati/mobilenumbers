@@ -8,7 +8,7 @@ namespace Juanparati\MobileNumbers;
  *
  * @package Juanparati\MobileNumbers
  */
-class Helper
+final class Helper
 {
 
     /**

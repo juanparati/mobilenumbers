@@ -12,7 +12,7 @@ class MobileNumbersNO extends MobileNumbers implements MobileNumbersContract
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      * @var string
      */
-    protected $countryAlphaCode = 'NO';
+    protected string $countryAlphaCode = 'NO';
 
 
     /**
@@ -20,7 +20,7 @@ class MobileNumbersNO extends MobileNumbers implements MobileNumbersContract
      *
      * @var string
      */
-    protected $countryCode = '47';
+    protected string $countryCode = '47';
 
 
     /**
@@ -29,7 +29,7 @@ class MobileNumbersNO extends MobileNumbers implements MobileNumbersContract
      * @see https://unicode.org/emoji/charts/full-emoji-list.html#country-flag
      * @var string
      */
-    protected $countryFlag = "🇳🇴";
+    protected string $countryFlag = "🇳🇴";
 
 
     /**
@@ -38,7 +38,7 @@ class MobileNumbersNO extends MobileNumbers implements MobileNumbersContract
      *
      * @var array
      */
-    protected $validPrefixCodes = [
+    protected array $validPrefixCodes = [
         '9'      => ['min' => 7 , 'max' => 7],
         '4'      => ['min' => 7 , 'max' => 7],
         '58'     => ['min' => 10, 'max' => 10], // M2M Traffic
