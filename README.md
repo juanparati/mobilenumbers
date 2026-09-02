@@ -6,7 +6,9 @@ MobileNumbers
 
 ## What is it?
 
-A library that validate and parse mobile phone numbers.
+A library that validate and parse standard mobile phone numbers.
+
+Mobile phone numbers assigned to special services and only data services are not validated.
 
 Right now only phone numbers from the following countries are validated:
 

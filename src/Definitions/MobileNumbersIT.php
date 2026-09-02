@@ -38,7 +38,7 @@ class MobileNumbersIT extends MobileNumbers implements MobileNumbersContract
      * @var array
      */
     protected array $validPrefixCodes = [
-        '3'      => ['min' => 9, 'max' => 10],
+        '3'      => ['min' => 8, 'max' => 10],
     ];
 
 }

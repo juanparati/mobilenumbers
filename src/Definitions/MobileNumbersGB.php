@@ -51,14 +51,15 @@ class MobileNumbersGB extends MobileNumbers implements MobileNumbersContract
      * @var array
      */
     protected array $validPrefixCodes = [
-        '071' => ['min' => 8, 'max' => 8],
-        '073' => ['min' => 8, 'max' => 8],
-        '074' => ['min' => 8, 'max' => 8],
-        '075' => ['min' => 8, 'max' => 8],
-        '076' => ['min' => 8, 'max' => 8],
-        '077' => ['min' => 8, 'max' => 8],
-        '078' => ['min' => 8, 'max' => 8],
-        '079' => ['min' => 8, 'max' => 8],
+        '071'   => ['min' => 8, 'max' => 8],
+        '072'   => ['min' => 8, 'max' => 8],
+        '073'   => ['min' => 8, 'max' => 8],
+        '074'   => ['min' => 8, 'max' => 8],
+        '075'   => ['min' => 8, 'max' => 8],
+        '07624' => ['min' => 6, 'max' => 6],  // Isle of Man
+        '077'   => ['min' => 8, 'max' => 8],
+        '078'   => ['min' => 8, 'max' => 8],
+        '079'   => ['min' => 8, 'max' => 8],
     ];
 
 }
