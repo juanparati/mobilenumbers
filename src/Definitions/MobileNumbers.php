@@ -1,4 +1,5 @@
 <?php
+
 namespace Juanparati\MobileNumbers\Definitions;
 
 use Juanparati\MobileNumbers\Definitions\Contracts\MobileNumbers as MobileNumbersContract;
@@ -12,7 +13,7 @@ abstract class MobileNumbers implements MobileNumbersContract
      * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      * @var string
      */
-    protected $countryAlphaCode;
+    protected string $countryAlphaCode;
 
 
     /**
@@ -21,7 +22,7 @@ abstract class MobileNumbers implements MobileNumbersContract
      * @see https://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-E.164C-2011-PDF-E.pdf
      * @var string
      */
-    protected $countryCode;
+    protected string $countryCode;
 
 
     /**
@@ -30,7 +31,7 @@ abstract class MobileNumbers implements MobileNumbersContract
      * @see https://unicode.org/emoji/charts/full-emoji-list.html#country-flag
      * @var string
      */
-    protected $countryFlag;
+    protected string $countryFlag;
 
 
     /**
@@ -38,7 +39,19 @@ abstract class MobileNumbers implements MobileNumbersContract
      *
      * @var array
      */
-    protected $validPrefixCodes = [];
+    protected array $validPrefixCodes = [];
+
+
+    /**
+     * Invalid prefix codes (Do not mistake with International prefix codes).
+     *
+     * This must be populated when there are some exceptions inside the valid prefix codes,
+     * like, for example, special prefix codes used only in TV and Drama series, Emergency services,
+     * Paid services, etc.
+     *
+     * @var array
+     */
+    protected array $invalidPrefixCodes = [];
 
 
     /**
@@ -47,7 +60,7 @@ abstract class MobileNumbers implements MobileNumbersContract
      * @param string $number
      * @return bool
      */
-    public function isValid($number) : bool
+    public function isValid(string $number): bool
     {
         return $this->validate($number);
     }
@@ -56,19 +69,19 @@ abstract class MobileNumbers implements MobileNumbersContract
     /**
      * Strip the international prefix code.
      *
-     * @param $number
+     * @param string $number
      * @return string
      */
-    public function stripCountryCode($number) : string
+    public function stripCountryCode(string $number): string
     {
         $prefix = '+' . $this->countryCode;
 
-        if (strpos($number, $prefix) === 0)
+        if (str_starts_with($number, $prefix))
             return substr($number, strlen($prefix));
 
         $prefix = '00' . $this->countryCode;
 
-        if (strpos($number, $prefix) === 0)
+        if (str_starts_with($number, $prefix))
             return substr($number, strlen($prefix));
 
         return $number;
@@ -78,10 +91,10 @@ abstract class MobileNumbers implements MobileNumbersContract
     /**
      * Check if number has a valid international prefix.
      *
-     * @param $number
+     * @param string $number
      * @return bool
      */
-    public function hasValidCountryCode($number) : bool
+    public function hasValidCountryCode(string $number): bool
     {
         return $this->stripCountryCode($number) !== $number;
     }
@@ -90,11 +103,11 @@ abstract class MobileNumbers implements MobileNumbersContract
     /**
      * Add the country code prefix to the mobile phone number.
      *
-     * @param $number
+     * @param string $number
      * @param string $prefix (Default '+')
      * @return string
      */
-    public function addCountryCode($number, $prefix) : string
+    public function addCountryCode(string $number, string $prefix): string
     {
         if ($this->hasValidCountryCode($number))
             return $number;
@@ -111,10 +124,11 @@ abstract class MobileNumbers implements MobileNumbersContract
     public function getDefinition(): array
     {
         return [
-            'country_alpha_code' => $this->countryAlphaCode,
-            'country_code'       => '+' . $this->countryCode,
-            'country_flag'       => $this->countryFlag,
-            'valid_prefix_codes' => $this->validPrefixCodes
+            'country_alpha_code'   => $this->countryAlphaCode,
+            'country_code'         => '+' . $this->countryCode,
+            'country_flag'         => $this->countryFlag,
+            'valid_prefix_codes'   => $this->validPrefixCodes,
+            'invalid_prefix_codes' => $this->invalidPrefixCodes,
         ];
     }
 
@@ -122,18 +136,37 @@ abstract class MobileNumbers implements MobileNumbersContract
     /**
      * Validate phone number.
      *
-     * @param $number
+     * @param string $number
      * @return bool
      */
-    protected function validate($number) : bool
+    protected function validate(string $number): bool
     {
         // Remove international prefix code.
         $number = $this->stripCountryCode($number);
 
-        foreach ($this->validPrefixCodes as $prefixCode => $lengths)
-        {
-            if (strpos($number, (string) $prefixCode) === 0)
-            {
+        if (static::hasMatchedPrefix($this->invalidPrefixCodes, $number)) {
+            return false;
+        }
+
+        if (static::hasMatchedPrefix($this->validPrefixCodes, $number)) {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    /**
+     * Find if the number has a matched prefix code.
+     *
+     * @param array $prefixCodes
+     * @param string $number
+     * @return bool
+     */
+    protected static function hasMatchedPrefix(array $prefixCodes, string $number) : bool
+    {
+        foreach ($prefixCodes as $prefixCode => $lengths) {
+            if (str_starts_with($number, (string)$prefixCode)) {
                 $numberLength = strlen($number) - strlen($prefixCode);
 
                 if ($numberLength >= $lengths['min'] && $numberLength <= $lengths['max'])
