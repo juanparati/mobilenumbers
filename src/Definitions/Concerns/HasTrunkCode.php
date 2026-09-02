@@ -11,10 +11,10 @@ trait HasTrunkCode
     /**
      * Strip the international prefix code.
      *
-     * @param $number
+     * @param string $number
      * @return string
      */
-    public function stripCountryCode($number): string
+    public function stripCountryCode(string $number): string
     {
         $numberStripped = parent::stripCountryCode($number);
 
@@ -25,11 +25,11 @@ trait HasTrunkCode
     /**
      * Add the country code prefix to the mobile phone number.
      *
-     * @param $number
+     * @param string $number
      * @param string $prefix
      * @return string
      */
-    public function addCountryCode($number, $prefix): string
+    public function addCountryCode(string $number, string $prefix): string
     {
         if ($this->hasValidCountryCode($number))
             return $number;

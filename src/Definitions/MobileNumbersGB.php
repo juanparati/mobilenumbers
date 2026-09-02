@@ -25,7 +25,7 @@ class MobileNumbersGB extends MobileNumbers implements MobileNumbersContract
      *
      * @var string
      */
-    protected $countryAlphaCode = 'GB';
+    protected string $countryAlphaCode = 'GB';
 
 
     /**
@@ -33,7 +33,7 @@ class MobileNumbersGB extends MobileNumbers implements MobileNumbersContract
      *
      * @var string
      */
-    protected $countryCode = '44';
+    protected string $countryCode = '44';
 
 
     /**
@@ -41,7 +41,7 @@ class MobileNumbersGB extends MobileNumbers implements MobileNumbersContract
      *
      * @var string
      */
-    protected $countryFlag = "🇬🇧";
+    protected string $countryFlag = "🇬🇧";
 
 
     /**
@@ -50,7 +50,7 @@ class MobileNumbersGB extends MobileNumbers implements MobileNumbersContract
      *
      * @var array
      */
-    protected $validPrefixCodes = [
+    protected array $validPrefixCodes = [
         '071' => ['min' => 8, 'max' => 8],
         '073' => ['min' => 8, 'max' => 8],
         '074' => ['min' => 8, 'max' => 8],

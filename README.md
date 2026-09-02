@@ -18,6 +18,7 @@ Right now only phone numbers from the following countries are validated:
 | Finland        | FI   |
 | France         | FR   |
 | United Kingdom | GB   |
+| Ireland        | IE   |
 | Italy          | IT   |
 | Norway         | NO   |
 | Poland         | PL   |

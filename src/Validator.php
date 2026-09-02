@@ -18,7 +18,7 @@ class Validator
     /**
      * @var MobileNumbersContract
      */
-    protected $definition;
+    protected MobileNumbersContract $definition;
 
 
     /**
@@ -26,16 +26,16 @@ class Validator
      *
      * @var Helper
      */
-    public $helper;
+    public Helper $helper;
 
 
     /**
      * Validator constructor.
      *
-     * @param $countryCode
+     * @param string $countryCode
      * @throws ValidatorException
      */
-    public function __construct($countryCode)
+    public function __construct(string $countryCode)
     {
         $definitionClass = Register::get($countryCode);
 
@@ -51,11 +51,11 @@ class Validator
     /**
      * Factory method.
      *
-     * @param $countryCode
+     * @param string $countryCode
      * @return static
      * @throws ValidatorException
      */
-    public static function country($countryCode) : Validator
+    public static function country(string $countryCode) : Validator
     {
         return new static($countryCode);
     }
@@ -64,10 +64,10 @@ class Validator
     /**
      * Check if mobile phone number is valid.
      *
-     * @param $number
+     * @param string $number
      * @return bool
      */
-    public function isValid($number) : bool
+    public function isValid(string $number) : bool
     {
         return $this->definition->isValid($number);
     }
@@ -79,7 +79,7 @@ class Validator
      * @param $number
      * @return string
      */
-    public function stripCountryCode($number) : string
+    public function stripCountryCode(string $number) : string
     {
         return $this->definition->stripCountryCode($number);
     }
@@ -88,10 +88,10 @@ class Validator
     /**
      * Check if number has a valid international prefix.
      *
-     * @param $number
+     * @param string $number
      * @return bool
      */
-    public function hasValidCountryCode($number) : bool
+    public function hasValidCountryCode(string $number) : bool
     {
         return $this->definition->hasValidCountryCode($number);
     }
@@ -100,11 +100,11 @@ class Validator
     /**
      * Add the country code prefix to the mobile phone number.
      *
-     * @param $number
+     * @param string $number
      * @param string $prefix
      * @return string
      */
-    public function addCountryCode($number, $prefix = '+') : string
+    public function addCountryCode(string $number, string $prefix = '+') : string
     {
         return $this->definition->addCountryCode($number, $prefix);
     }

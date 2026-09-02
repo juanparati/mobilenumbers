@@ -9,43 +9,43 @@ interface MobileNumbers
     /**
      * Validate phone number.
      *
-     * @param $number       string
+     * @param string $number string
      * @return bool
      */
-    public function isValid($number) : bool;
+    public function isValid(string $number) : bool;
 
 
     /**
      * Validate if phone number has a valid international prefix.
      *
-     * @param $number
+     * @param string $number
      * @return bool
      */
-    public function hasValidCountryCode($number) : bool;
+    public function hasValidCountryCode(string $number) : bool;
 
 
     /**
      * Stripe the phone number.
      *
-     * @param $number
+     * @param string $number
      * @return string
      */
-    public function stripCountryCode($number) : string;
+    public function stripCountryCode(string $number) : string;
 
 
     /**
      * Add the country code to a number.
      *
-     * @param $number
+     * @param string $number
      * @param string $prefix
      * @return string
      */
-    public function addCountryCode($number, $prefix) : string;
+    public function addCountryCode(string $number, string $prefix) : string;
 
 
     /**
      * Get definition info.
-     * 
+     *
      * @return array
      */
     public function getDefinition() : array;
